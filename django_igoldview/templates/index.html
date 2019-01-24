@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block title %}自動測試頁面{% endblock %}
+{% block content %}
+
+<script src="../static/js/index.js"></script>
+
+<div class="ui grid">
+    <div class="three wide column">
+        <div class="ui vertical fluid tabular menu">
+            <a id="igoldbox" class="item">　</a>
+            <a id="bibbox" class="item">　</a>
+            <a id="ukbox" class="item">　</a>
+            <a id="acetopbox" class="item">　</a>
+            <a id="goldbox" class="item">　</a>
+            <a id="grbox" class="item">　</a>
+        </div>
+    </div>
+    <div class="twelve wide stretched column" style="margin-left: -25px;">
+        <div id="igold" class="ui raised very padded container segment">
+        </div>
+    </div>
+</div>
+<h4 class="ui horizontal divider" id="hr_title" alt="">
+    <div class="ui compact menu">
+        <a class="item">
+            <i class="icon check"></i> 正常
+            <div class="floating ui green label circular">0</div>
+        </a>
+        <a class="item ">
+            <i class="icon x"></i> 錯誤
+            <div class="floating ui red label circular">0</div>
+        </a>
+        <a class="item ing">
+            <i class="icon spinner"></i> 執行中
+            <div class="floating ui grey label circular">0</div>
+        </a>
+    </div>
+</h4>
+
+
+<div class="ui raised very padded text container segment" id="cz" alt="">
+
+    <div class="ui text loader">加载中</div>
+
+
+</div>
+<div class="ui vertical labeled icon menu" alt="1.0" style="position: absolute; bottom: 0px; right:10px;">
+    <a class="item volumez" onclick="vol()">
+        <i class="volume up icon" ></i>
+        開/關聲音
+    </a>
+    <a class="item">
+        <i class="edit icon"></i>
+        編輯監控項目
+    </a>
+</div>
+
+<style>
+    .ui.button {
+        min-width: 130px;
+        min-height: 102px;
+        margin: 5px;
+        line-height: 20px;
+    }
+
+    .segment.igoldbox, #igoldbox {
+        background-image: url(../static/imgs/logo5th_01.png);
+        background-size: 144px;
+    }
+
+    #igoldbox, #bibbox, #ukbox, #acetopbox, #goldbox, #grbox {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+    }
+
+    .segment.bibbox, #bibbox {
+        background-image: url(../static/imgs/logo.png);
+        background-size: 160px;
+    }
+
+    .segment.ukbox, #ukbox {
+        background-image: url(../static/imgs/logo1.png);
+        background-size: 110px;
+    }
+
+    .segment.acetopbox, #acetopbox {
+        background-image: url(../static/imgs/logo2.jpg);
+        background-size: 144px;
+    }
+
+    .segment.goldbox, #goldbox {
+        background-image: url(../static/imgs/gold.jpg);
+        background-size: 110px;
+    }
+
+    .segment.grbox, #grbox {
+        background-image: url(../static/imgs/gr.jpg);
+        background-size: 110px;
+    }
+
+    .segment.acetopbox, .segment.goldbox, .segment.grbox, .segment.ukbox, .segment.bibbox, .segment.igoldbox {
+        float: left;
+        background-position-x: center;
+        background-repeat: no-repeat;
+    }
+
+    .boxtitle {
+        text-align: center;
+    }
+
+    .ui.button.b1 {
+        width: 155px;
+        height: 93px;
+    }
+
+    .item.active {
+        background-color: cornflowerblue;
+    !important;
+    }
+    /*.icon.spinner {*/
+
+        /*transition: 2s;*/
+    /*}*/
+    /*.icon.spinner:hover{*/
+        /*transform: scale(1.8) rotate(360deg);*/
+/*}*/
+    /*.item .icon.spinner:after {*/
+    /*transition: 0.5s;*/
+
+/*}*/
+.item .icon.spinner,.item .icon.check,.item .icon.x {
+  transition: 1s;
+}
+
+.item:hover .icon.spinner,.item:hover .icon.check,.item:hover .icon.x {
+    transition: 1s;
+    opacity: 1;
+    transform: scale(1.8)rotate(360deg);
+}
+
+
+
+</style>
+{% endblock %}
